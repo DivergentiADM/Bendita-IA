@@ -1,0 +1,42 @@
+# Claude Code local config
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/agent-memory/
+
+# Generated MCP config (standalone mode)
+.mcp.json
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Environment
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Runtime data
+data/trades/portfolio.json
+data/trades/predictions.json
+data/trades/agent-scorecards.json
+data/trades/patterns.json
+data/reports/*
+!data/reports/.gitkeep
+data/logs/*
+!data/logs/.gitkeep
+data/create/*
+!data/create/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# Plugin cache (when installed as plugin)
+.claude-plugin/cache/
