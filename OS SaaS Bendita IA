@@ -1,0 +1,349 @@
+# 🔥 EL STACK QUE CAMBIA CÓMO TRABAJAS CON AGENTES DE IA
+## Guía para la Comunidad Bendita IA
+### Marzo 2026 | Libre para compartir
+ 
+---
+ 
+Hay una diferencia enorme entre tener Claude Code instalado y tener Claude Code funcionando como un profesional de verdad.
+ 
+La diferencia está en la infraestructura que lo rodea.
+ 
+Estos 3 repos son open source, gratuitos, y llevan meses siendo los más estrellados en GitHub dentro del ecosistema de agentes de código. Si trabajas con Claude Code, Cursor, Windsurf, Codex o cualquier otro agente, esto te va a cambiar la forma de construir.
+ 
+---
+ 
+## ¿QUÉ SON?
+ 
+| # | Repo | Qué resuelve |
+|---|---|---|
+| 1 | **Everything Claude Code** | Tu agente sin memoria, sin estándares y sin seguridad → con todo eso |
+| 2 | **Superpowers** | Tu agente que improvisa y salta a codear → uno que sigue un proceso real |
+| 3 | **UI UX Pro Max** | Tu agente que hace UIs genéricas → uno con criterio de diseño profesional |
+ 
+No son tres opciones. Se instalan los tres. Se potencian entre sí.
+ 
+---
+ 
+## 1️⃣ EVERYTHING CLAUDE CODE
+ 
+**GitHub:** https://github.com/affaan-m/everything-claude-code
+**Licencia:** MIT | **Estrellas:** 81K+ | **Forks:** 10K+
+ 
+### El problema que resuelve
+ 
+Por defecto, cada vez que abres una sesión de Claude Code, el agente empieza desde cero. Sin memoria de lo que hicieron antes. Sin estándares de seguridad activos. Sin hooks que cuiden la calidad. Sin forma de persistir aprendizajes entre proyectos.
+ 
+Everything Claude Code es el sistema operativo que le falta al agente por defecto.
+ 
+### Qué incluye
+ 
+- **Skills** — comportamientos reutilizables que el agente aprende y aplica automáticamente
+- **Instincts** — reacciones inmediatas ante situaciones conocidas (errores, patrones, código inseguro)
+- **Memory hooks** — persistencia de contexto entre sesiones
+- **Security scanning** — AgentShield con 102 reglas y 912 tests
+- **Hooks y comandos** — automatizaciones que corren en el ciclo de vida del agente
+- **Configuraciones MCP** — integraciones listas para usar
+ 
+### Las 3 guías incluidas (leer en este orden)
+ 
+| Guía | Qué cubre |
+|---|---|
+| **Shorthand Guide** | Setup, fundamentos, filosofía. Leer primero, siempre. |
+| **Longform Guide** | Optimización de tokens, memoria persistente, evals, paralelización |
+| **Security Guide** | Vectores de ataque, sandboxing, sanitización, CVEs, AgentShield |
+ 
+### Instalación
+ 
+**Como plugin de Claude Code (más fácil):**
+```bash
+/plugin marketplace add affaan-m/everything-claude-code
+/plugin install everything-claude-code@everything-claude-code
+```
+ 
+**Manual (sirve para cualquier agente):**
+```bash
+gh ext install affaan-m/everything-claude-code
+```
+ 
+**Configuración en settings.json:**
+```json
+{
+  "extraKnownMarketplaces": {
+    "everything-claude-code": {
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/everything-claude-code"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "everything-claude-code@everything-claude-code": true
+  }
+}
+```
+ 
+### Compatible con
+ 
+Claude Code · Cursor · Windsurf · Codex · Cowork · OpenCode · y otros
+ 
+---
+ 
+## 2️⃣ SUPERPOWERS
+ 
+**GitHub:** https://github.com/obra/superpowers
+**Licencia:** MIT | **Maintainer:** Jesse Vincent (Prime Radiant)
+ 
+### El problema que resuelve
+ 
+Le dices a tu agente "construye X" y de inmediato empieza a escribir código. Sin preguntarte qué querías exactamente. Sin un plan. Sin tests. Sin revisión. Y al final tienes algo que funciona a medias y no se parece a lo que necesitabas.
+ 
+Superpowers le instala un proceso real al agente. Uno que cualquier desarrollador sénior seguiría.
+ 
+### Cómo funciona
+ 
+Superpowers es una colección de skills composables que se **activan automáticamente** según lo que el agente detecta que estás haciendo. No tienes que hacer nada especial. Tu agente simplemente pasa a tener Superpowers.
+ 
+### El flujo que instala
+ 
+| Etapa | Skill | Qué pasa |
+|---|---|---|
+| 1 | `brainstorming` | Antes de codear, el agente te pregunta qué quieres realmente construir. Refina la idea. |
+| 2 | `using-git-worktrees` | Crea un workspace aislado en una rama nueva. Tu código principal no se toca. |
+| 3 | `writing-plans` | Divide el trabajo en tareas de 2–5 minutos con rutas exactas de archivos y código. |
+| 4 | `subagent-driven-development` | Lanza subagentes por tarea con revisión en dos etapas: spec compliance + code quality. |
+| 5 | `test-driven-development` | Ciclo RED → GREEN → REFACTOR estricto. Primero el test que falla, después el código. |
+| 6 | `requesting-code-review` | Revisión entre tareas. Los problemas críticos bloquean el avance. |
+| 7 | `finishing-a-development-branch` | Cierre limpio: te presenta opciones (merge, PR, conservar, descartar) y limpia el worktree. |
+ 
+### Skills de debugging y calidad
+ 
+| Skill | Cuándo activa |
+|---|---|
+| `systematic-debugging` | Cuando hay un bug. Proceso de 4 fases para encontrar la causa raíz. |
+| `verification-before-completion` | Antes de marcar algo como listo. Verifica que el fix realmente funciona. |
+| `dispatching-parallel-agents` | Para tareas independientes que se pueden hacer en simultáneo. |
+ 
+### Instalación
+ 
+**Claude Code:**
+```bash
+/plugin install obra/superpowers
+```
+ 
+**Cursor:**
+```bash
+mkdir -p ~/.cursor/skills
+git clone https://github.com/obra/superpowers.git ~/.cursor/skills/superpowers
+```
+ 
+**Codex:**
+```
+Fetch and follow:
+https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md
+```
+ 
+**OpenCode:**
+```
+Fetch and follow:
+https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
+```
+ 
+### Lo que más importa entender
+ 
+Los skills son **obligatorios**, no sugerencias. El agente los ejecuta siempre que la situación lo requiere. No los omite por conveniencia. Eso es exactamente lo que los hace útiles.
+ 
+---
+ 
+## 3️⃣ UI UX PRO MAX
+ 
+**GitHub:** https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+**Website:** https://ui-ux-pro-max-skill.nextlevelbuilder.io
+**Licencia:** MIT | **Versión:** v2.5.0 | **Estrellas:** 47K+ | **Descargas:** 44K/mes
+ 
+### El problema que resuelve
+ 
+Le pides a tu agente una landing page o un dashboard y te entrega algo que técnicamente funciona pero visualmente parece hecho en 2010. Colores sin coherencia. Tipografías sin criterio. Sin sistema de diseño. Sin jerarquía visual.
+ 
+UI UX Pro Max le da al agente una base de datos completa de inteligencia de diseño. Antes de escribir una línea de CSS, el agente sabe exactamente qué paleta usar, qué tipografía combina, qué estilo visual aplica a tu tipo de producto, y qué errores de UX evitar.
+ 
+### Qué contiene la base de datos
+ 
+| Categoría | Cantidad |
+|---|---|
+| Tipos de producto con recomendaciones de estilo | 161 |
+| Estilos visuales (glassmorphism, brutalism, minimal, etc.) | 84 |
+| Paletas de color con lógica | 161 |
+| Combinaciones tipográficas con Google Fonts | 57 |
+| Guías de UX y anti-patrones | 99 |
+| Tipos de charts para dashboards y analytics | 25 |
+ 
+Todo searchable con motor BM25 + regex híbrido.
+ 
+### Stacks soportados
+ 
+`html-tailwind` · `react` · `nextjs` · `vue` · `svelte` · `swiftui` · `react-native` · `flutter` · `shadcn/ui` · `jetpack-compose`
+ 
+### Instalación
+ 
+**Claude Code — plugin marketplace:**
+```bash
+/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+/plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+```
+ 
+**CLI universal (recomendado si usás varios agentes):**
+```bash
+# Instalar CLI
+npm install -g uipro-cli
+ 
+# Instalar en tu proyecto para el agente que uses
+uipro init --ai claude      # Claude Code
+uipro init --ai cursor      # Cursor
+uipro init --ai windsurf    # Windsurf
+uipro init --ai codex       # Codex CLI
+uipro init --ai gemini      # Gemini CLI
+uipro init --ai all         # Todos a la vez
+```
+ 
+**Actualizar y gestionar:**
+```bash
+uipro update             # Actualizar a la última versión
+uipro versions           # Ver versiones disponibles
+uipro init --offline     # Instalar sin descargar (usa assets locales)
+uipro init --force       # Sobrescribir instalación existente
+```
+ 
+### Cómo lo usa el agente
+ 
+Cuando pedís trabajo de UI, el agente corre el motor de búsqueda primero:
+ 
+```bash
+# Generar un design system completo para tu proyecto
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard fintech dark" --design-system -p "MiProyecto"
+ 
+# Guardarlo para que persista entre sesiones
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MiProyecto"
+ 
+# Buscar por dominio específico
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "glassmorphism" --domain style
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "elegant modern" --domain typography
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "KPIs analytics" --domain chart
+ 
+# Con stack específico
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "form validation" --stack react
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "server components" --stack nextjs
+```
+ 
+### Design system persistente
+ 
+El agente puede guardar el sistema de diseño de tu proyecto para que todas las páginas sean coherentes:
+ 
+```
+design-system/
+├── MASTER.md       # Fuente de verdad: colores, tipografía, espaciado, componentes
+└── pages/
+    ├── landing.md  # Ajustes específicos para la landing
+    ├── dashboard.md
+    └── admin.md
+```
+ 
+Cada página nueva hereda del MASTER y solo define las diferencias. Coherencia visual sin esfuerzo.
+ 
+---
+ 
+## CÓMO SE POTENCIAN LOS 3
+ 
+Instalados juntos, el flujo completo es:
+ 
+```
+Vos le pedís algo al agente
+        │
+        ▼
+EVERYTHING CLAUDE CODE activa
+→ Carga memoria del proyecto anterior
+→ Hooks de seguridad corriendo
+→ Contexto persistente disponible
+        │
+        ▼
+SUPERPOWERS activa
+→ El agente no corre a codear
+→ Te hace preguntas, refina la spec
+→ Genera plan → TDD → review → merge
+        │
+        ▼ (si la tarea involucra UI)
+UI UX PRO MAX activa
+→ Busca en la base de datos de diseño
+→ Genera design system antes del primer CSS
+→ Código con colores, tipografía y UX correctos desde el inicio
+```
+ 
+El resultado es un agente que trabaja como un desarrollador senior con criterio de diseño. Que no improvisa. Que recuerda. Que sigue estándares. Que testea antes de marcar como hecho.
+ 
+---
+ 
+## INSTALACIÓN COMPLETA EN 3 PASOS
+ 
+```bash
+# Paso 1 — Base del agente
+/plugin marketplace add affaan-m/everything-claude-code
+/plugin install everything-claude-code@everything-claude-code
+ 
+# Paso 2 — Proceso de desarrollo
+/plugin install obra/superpowers
+ 
+# Paso 3 — Inteligencia de diseño
+npm install -g uipro-cli
+uipro init --ai claude
+```
+ 
+Reiniciá la sesión de Claude Code. El stack está activo.
+ 
+---
+ 
+## VERIFICACIÓN POST-INSTALACIÓN
+ 
+```
+□ /plugin list muestra los 3 plugins
+□ Al pedir que construya algo, el agente hace preguntas primero (Superpowers)
+□ Al pedir UI, menciona design system o estilos antes del código (UI UX Pro Max)
+□ La memoria del proyecto persiste entre sesiones (Everything Claude Code)
+□ uipro --version muestra v2.2.3 o superior
+```
+ 
+---
+ 
+## LINKS DIRECTOS
+ 
+| Recurso | Link |
+|---|---|
+| Everything Claude Code | https://github.com/affaan-m/everything-claude-code |
+| ECC en GitHub Marketplace | https://github.com/marketplace/ecc-tools |
+| Superpowers | https://github.com/obra/superpowers |
+| UI UX Pro Max | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill |
+| UI UX Pro Max Website | https://ui-ux-pro-max-skill.nextlevelbuilder.io |
+| uipro-cli en npm | https://www.npmjs.com/package/uipro-cli |
+ 
+---
+ 
+## PREGUNTAS FRECUENTES
+ 
+**¿Funciona solo con Claude Code o con otros agentes?**
+Los 3 funcionan en Claude Code, Cursor, Windsurf, Codex, OpenCode, Gemini CLI y más. Cada uno tiene instrucciones de instalación para cada plataforma.
+ 
+**¿Son de pago?**
+No. Los 3 son open source con licencia MIT. Gratis para uso personal y comercial.
+ 
+**¿Necesito instalar los 3 o puedo instalar solo uno?**
+Podés instalar solo los que necesitás. Pero la potencia real viene de tenerlos los 3 juntos — se complementan en capas distintas.
+ 
+**¿Se actualizan solos?**
+Everything Claude Code y Superpowers se actualizan cuando actualizás el plugin. Para UI UX Pro Max: `uipro update`.
+ 
+**¿Qué pasa si ya tengo un proyecto en curso?**
+Se instalan en el proyecto y se activan para las tareas nuevas. No rompen lo que ya existe.
+ 
+---
+ 
+*Guía preparada para la comunidad Bendita IA — Marzo 2026*
+*Compartí libremente. Los repos son open source y la comunidad crece cuando todos tenemos mejores herramientas.*
+ 
